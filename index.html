@@ -40,4 +40,77 @@
 
   <p id="updated"></p>
 
-  <scrip
+  <script>
+    const thingsRaw = `
+Google maps
+Dropbox
+Google Drive
+a bread
+Pokemon cards
+big data analysis tool
+an escape room
+a history book
+Netflix
+bicycle
+HBO Max
+a speedometer
+an mp3 player
+a drivers license
+an airline
+a manifest
+a drink
+a bed
+Google search app
+coffee cup
+coffee shop
+start up
+mobile app
+mobile phone
+a search engine
+a spreadsheet
+Facebook group
+a radio station
+`;
+
+    const groupsRaw = `
+children
+statisticians
+data analysts
+undercover agents
+Christians
+criminals
+students
+architects
+Hindus
+asians
+immigrants
+doctors
+handymen
+politicians
+bus drivers
+cab drivers
+pilots
+`;
+
+    const things = thingsRaw.trim().split('\n');
+    const groups = groupsRaw.trim().split('\n');
+
+    function getRandomItem(list) {
+      return list[Math.floor(Math.random() * list.length)];
+    }
+
+    function generateIdea() {
+      const thing = getRandomItem(things);
+      const group = getRandomItem(groups);
+      const phrase = `It's ${thing} for ${group}`;
+      document.getElementById("output").textContent = phrase;
+    }
+
+    // Display current date and time as "Updated"
+    const updatedElement = document.getElementById("updated");
+    const now = new Date();
+    updatedElement.textContent = "Updated: " + now.toLocaleString();
+  </script>
+
+</body>
+</html>
