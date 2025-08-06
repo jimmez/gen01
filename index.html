@@ -8,6 +8,14 @@
       padding: 20px;
       max-width: 700px;
       margin: auto;
+      position: relative;
+    }
+    #updated {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      font-size: 12px;
+      color: gray;
     }
     button {
       padding: 10px 20px;
@@ -19,14 +27,11 @@
       font-size: 24px;
       font-weight: bold;
     }
-    #updated {
-      font-size: 12px;
-      color: gray;
-      margin-top: 40px;
-    }
   </style>
 </head>
 <body>
+
+  <p id="updated"></p>
 
   <p style="font-size: 18px; font-style: italic; margin-bottom: 20px;">
     Next time you're in a business meeting with investors and want to impress, here are some big ideas.
@@ -37,8 +42,6 @@
   <button onclick="generateIdea()">Generate Phrase</button>
 
   <div id="output"></div>
-
-  <p id="updated"></p>
 
   <script>
     const thingsRaw = `
@@ -106,7 +109,7 @@ pilots
       document.getElementById("output").textContent = phrase;
     }
 
-    // Display current date and time as "Updated"
+    // Set updated date/time in top-right
     const updatedElement = document.getElementById("updated");
     const now = new Date();
     updatedElement.textContent = "Updated: " + now.toLocaleString();
