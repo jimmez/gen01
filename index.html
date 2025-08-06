@@ -9,17 +9,13 @@
       max-width: 700px;
       margin: auto;
     }
-    textarea {
-      width: 100%;
-      height: 150px;
-      margin-bottom: 10px;
-    }
     button {
       padding: 10px 20px;
       font-size: 16px;
+      margin-top: 20px;
     }
     #output {
-      margin-top: 20px;
+      margin-top: 30px;
       font-size: 24px;
       font-weight: bold;
     }
@@ -32,81 +28,36 @@
   </p>
 
   <h1>Start up idea generator</h1>
-  <p>Customize the lists below (one item per line):</p>
-
-  <label><strong>List of Things</strong></label>
-  <textarea id="group2">Google maps
-Dropbox
-Google Drive
-a bread
-Pokemon cards
-big data analysis tool
-an escape room 
-a history book
-Netflix
-bicycle
-HBO Max
-a speedometer
-an mp3 player
-a drivers license
-an airline
-a manifest
-a drink 
-a bed  
-Google search app
-coffee cup
-coffee shop
-start up
-mobile app
-mobile phone
-a search engine
-a spreadsheet
-Facebook group
-a radio station</textarea>
-
-  <label><strong>List of Groups</strong></label>
-  <textarea id="group4">children
-statisticians 
-data analysts
-undercover agents
-Christians
-criminals
-students
-architects
-Hindus
-asians
-immigrants
-doctors
-handymen
-politicians
-bus drivers
-cab drivers
-pilots</textarea>
 
   <button onclick="generateIdea()">Generate Phrase</button>
 
   <div id="output"></div>
 
   <script>
+    const things = [
+      "Google maps", "Dropbox", "Google Drive", "a bread", "Pokemon cards",
+      "big data analysis tool", "an escape room", "a history book", "Netflix",
+      "bicycle", "HBO Max", "a speedometer", "an mp3 player", "a drivers license",
+      "an airline", "a manifest", "a drink", "a bed", "Google search app",
+      "coffee cup", "coffee shop", "start up", "mobile app", "mobile phone",
+      "a search engine", "a spreadsheet", "Facebook group", "a radio station"
+    ];
+
+    const groups = [
+      "children", "statisticians", "data analysts", "undercover agents",
+      "Christians", "criminals", "students", "architects", "Hindus", "asians",
+      "immigrants", "doctors", "handymen", "politicians", "bus drivers",
+      "cab drivers", "pilots"
+    ];
+
     function getRandomItem(list) {
-      const cleanList = list.map(item => item.trim()).filter(item => item.length > 0);
-      if (cleanList.length === 0) return null;
-      return cleanList[Math.floor(Math.random() * cleanList.length)];
+      return list[Math.floor(Math.random() * list.length)];
     }
 
     function generateIdea() {
-      const group2 = document.getElementById("group2").value.split("\n");
-      const group4 = document.getElementById("group4").value.split("\n");
+      const thing = getRandomItem(things);
+      const group = getRandomItem(groups);
 
-      const thing = getRandomItem(group2);
-      const group = getRandomItem(group4);
-
-      if (!thing || !group) {
-        document.getElementById("output").textContent = "Please fill in both lists properly";
-        return;
-      }
-
-      // ✅ Show only the generated phrase
       const phrase = `It's ${thing} for ${group}`;
       document.getElementById("output").textContent = phrase;
     }
