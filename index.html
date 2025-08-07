@@ -31,7 +31,8 @@
 </head>
 <body>
 
-  <p id="updated"></p>
+  <!-- ✅ Hardcoded Last Updated -->
+  <p id="updated">Updated: 07.08.2025, 14:30</p>
 
   <p style="font-size: 18px; font-style: italic; margin-bottom: 20px;">
     Next time you're in a business meeting with investors and want to impress, here are some big ideas.
@@ -108,11 +109,6 @@ pilots
       const phrase = `It's ${thing} for ${group}`;
       document.getElementById("output").textContent = phrase;
     }
-
-    // Set updated date/time in top-right
-    const updatedElement = document.getElementById("updated");
-    const now = new Date();
-    updatedElement.textContent = "Updated: " + now.toLocaleString();
   </script>
 
 </body>
