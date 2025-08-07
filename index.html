@@ -4,12 +4,22 @@
   <title>Start up idea generator</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       font-family: Arial, sans-serif;
-      padding: 20px;
       margin: 0;
-      max-width: 100%;
-      box-sizing: border-box;
+      padding: 0;
+      background: #fff;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+      position: relative;
     }
 
     #updated {
@@ -22,17 +32,20 @@
 
     h1 {
       font-size: 6vw;
-      margin-top: 40px;
+      margin-top: 60px;
+      text-align: center;
     }
 
     p {
       font-size: 4.5vw;
+      text-align: center;
     }
 
     button {
+      display: block;
+      margin: 30px auto 10px auto;
       padding: 12px 24px;
       font-size: 5vw;
-      margin-top: 20px;
       width: 100%;
       max-width: 400px;
     }
@@ -41,6 +54,7 @@
       margin-top: 30px;
       font-size: 6vw;
       font-weight: bold;
+      text-align: center;
       word-wrap: break-word;
     }
 
@@ -56,17 +70,19 @@
 </head>
 <body>
 
-  <p id="updated">Updated: 07.08.2025, 02:04</p>
+  <div class="container">
+    <p id="updated">Updated: 07.08.2025, 02:04</p>
 
-  <p style="font-style: italic; margin-bottom: 20px;">
-    Next time you're in a business meeting with investors and want to impress, here are some big ideas.
-  </p>
+    <p style="font-style: italic; margin-bottom: 20px;">
+      Next time you're in a business meeting with investors and want to impress, here are some big ideas.
+    </p>
 
-  <h1>Start up idea generator</h1>
+    <h1>Start up idea generator</h1>
 
-  <button onclick="generateIdea()">Generate Phrase</button>
+    <button onclick="generateIdea()">Generate Phrase</button>
 
-  <div id="output"></div>
+    <div id="output"></div>
+  </div>
 
   <script>
     const thingsRaw = `
