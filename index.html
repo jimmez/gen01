@@ -1,15 +1,17 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <title>Start up idea generator</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body {
       font-family: Arial, sans-serif;
       padding: 20px;
-      max-width: 700px;
-      margin: auto;
-      position: relative;
+      margin: 0;
+      max-width: 100%;
+      box-sizing: border-box;
     }
+
     #updated {
       position: absolute;
       top: 10px;
@@ -17,24 +19,46 @@
       font-size: 12px;
       color: gray;
     }
-    button {
-      padding: 10px 20px;
-      font-size: 16px;
-      margin-top: 20px;
+
+    h1 {
+      font-size: 6vw;
+      margin-top: 40px;
     }
+
+    p {
+      font-size: 4.5vw;
+    }
+
+    button {
+      padding: 12px 24px;
+      font-size: 5vw;
+      margin-top: 20px;
+      width: 100%;
+      max-width: 400px;
+    }
+
     #output {
       margin-top: 30px;
-      font-size: 24px;
+      font-size: 6vw;
       font-weight: bold;
+      word-wrap: break-word;
+    }
+
+    @media (min-width: 768px) {
+      h1 {
+        font-size: 32px;
+      }
+      p, button, #output {
+        font-size: 20px;
+      }
     }
   </style>
 </head>
 <body>
 
-  <!-- ✅ Set the time manually here -->
   <p id="updated">Updated: 07.08.2025, 02:04</p>
 
-  <p style="font-size: 18px; font-style: italic; margin-bottom: 20px;">
+  <p style="font-style: italic; margin-bottom: 20px;">
     Next time you're in a business meeting with investors and want to impress, here are some big ideas.
   </p>
 
