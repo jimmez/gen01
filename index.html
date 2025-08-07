@@ -12,7 +12,8 @@
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
-      background: #fff;
+      background: #000; /* black background */
+      color: #fff;      /* white text */
     }
 
     .container {
@@ -34,11 +35,19 @@
       font-size: 6vw;
       margin-top: 60px;
       text-align: center;
+      color: white;
     }
 
     p {
       font-size: 4.5vw;
       text-align: center;
+      color: white;
+    }
+
+    .intro {
+      color: #66ccff; /* light blue */
+      font-style: italic;
+      margin-bottom: 20px;
     }
 
     button {
@@ -48,7 +57,14 @@
       font-size: 5vw;
       width: 100%;
       max-width: 400px;
+      background-color: #222;
+      color: white;
+      border: 1px solid white;
       cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #333;
     }
 
     #output {
@@ -57,6 +73,7 @@
       font-weight: bold;
       text-align: center;
       word-wrap: break-word;
+      color: white;
     }
 
     @media (min-width: 768px) {
@@ -74,13 +91,12 @@
   <div class="container">
     <p id="updated">Updated: 07.08.2025, 02:04</p>
 
-    <p style="font-style: italic; margin-bottom: 20px;">
+    <p class="intro">
       Next time you're in a business meeting with investors and want to impress, here are some big ideas.
     </p>
 
     <h1>Start up idea generator</h1>
 
-    <!-- ✅ Button text updated -->
     <button onclick="generateIdea()">Generate business idea</button>
 
     <div id="output"></div>
